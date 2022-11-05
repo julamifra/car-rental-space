@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,7 +83,7 @@ WSGI_APPLICATION = 'djando_car_rental_space.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://pmcgictduerphb:2dff572b92f191725517611d3f2244b6219afe5c8219365cb969d279fc8e77cf@ec2-44-199-9-102.compute-1.amazonaws.com:5432/d9lvli8ue9eq9f')
+    'default': dj_database_url.parse('postgres://mxqkjoaltpgdsx:473ccc7cac5b6134c529d07330097cb6ca89be1f90a0e707596f1facee6cb925@ec2-18-215-41-121.compute-1.amazonaws.com:5432/dacieu59isu49r')
 }
 
 
