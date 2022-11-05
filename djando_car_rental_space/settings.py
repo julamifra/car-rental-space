@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l%1c=p+rs+lq4u=alq#r#7$)n_%i56*-yg^d=e2e1*_osq7=+y'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-l%1c=p+rs+lq4u=alq#r#7$)n_%i56*-yg^d=e2e1*_osq7=+y')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['car-rental-space.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+# 'car-rental-space.herokuapp.com'
 
 
 # Application definition
@@ -83,7 +85,7 @@ WSGI_APPLICATION = 'djando_car_rental_space.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://mxqkjoaltpgdsx:473ccc7cac5b6134c529d07330097cb6ca89be1f90a0e707596f1facee6cb925@ec2-18-215-41-121.compute-1.amazonaws.com:5432/dacieu59isu49r')
+    'default': dj_database_url.parse(os.environ.get('DATABSE_URL'))
 }
 
 
