@@ -1,1 +1,1 @@
-web: gunicorn django_car_rental_space.wsgi:application
+web: gunicorn car_rental_space.wsgi:application
